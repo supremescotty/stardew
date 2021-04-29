@@ -1,4 +1,4 @@
-package Items;
+package ItemsOld;
 
 public class Weapon extends Item {
     private int damage;

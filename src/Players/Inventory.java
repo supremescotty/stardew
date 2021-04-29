@@ -1,6 +1,6 @@
 package Players;
 
-import Items.Item;
+import ItemsOld.Item;
 
 /**
  * Player or NPC Inventory

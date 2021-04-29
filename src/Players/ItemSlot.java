@@ -1,9 +1,9 @@
 package Players;
 
-import Items.Item;
+import ItemsOld.Item;
 
 public class ItemSlot {
-    private Items.Item item;
+    private ItemsOld.Item item;
 
     public Item getItem() { return item; }
     public void setItem(Item item) { this.item = item; }

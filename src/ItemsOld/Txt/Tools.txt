@@ -1,0 +1,5 @@
+Axe
+Fishing Pole
+Hoe
+Pickaxe
+Watering Can
