@@ -8,6 +8,10 @@ public class NPC extends Player {
         this(true, "", "");
     }
 
+    public NPC(String firstName, String lastName) {
+        this(true, firstName, lastName);
+    }
+
     public NPC(boolean isNPC, String firstName, String lastName) {
         this.setNPC(isNPC);
         this.setFirstName(firstName);

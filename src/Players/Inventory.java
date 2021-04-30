@@ -41,7 +41,9 @@ public class Inventory {
             for (ItemSlot itemSlot : inventory) {
                 if (itemSlot == null) {
                     // add item to empty slot
-                    itemSlot.setItem(item);
+                    itemSlot = new ItemSlot(item);
+//                    itemSlot.setItem(item);
+                    System.out.println("set item");
                     break;
                 }
             }
@@ -70,7 +72,7 @@ public class Inventory {
      */
     private boolean itemInInventory(Item item) {
         for (ItemSlot itemSlot : inventory) {
-            if (itemSlot.getItem().equals(item)) {
+            if (itemSlot != null && itemSlot.getItem().equals(item)) {
                 return true;
             }
         }

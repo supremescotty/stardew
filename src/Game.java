@@ -1,14 +1,19 @@
+import ItemsOld.AnimalProduct;
+import ItemsOld.Item;
 import Menus.*;
+import Players.*;
+
+import java.io.IOException;
 
 public class Game {
     private static boolean verb = true;
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException, InterruptedException {
         System.out.println("Running: Game.java");
         System.out.println();
 
         if (verb && args.length > 0) {
-            switch(args[0].toString()) {
+            switch(args[0]) {
                 case "Combat":      testCombat();       break;
                 case "Inventory":   testInventory();    break;
                 case "MainMenu":    testMainMenu();     break;
@@ -34,11 +39,20 @@ public class Game {
     private static void testFarming() {
     }
 
-    private static void testMainMenu() {
+    private static void testMainMenu() throws IOException, InterruptedException {
         Menus.Main.displayMainMenu();
     }
 
     private static void testInventory() {
+        Players.Inventory inventory = new Players.Inventory(new NPC());
+        inventory.addToInventory(new AnimalProduct());
+        ItemSlot[] slots = inventory.getInventory();
+
+        for (ItemSlot itemSlot : slots) {
+            if (itemSlot != null && itemSlot.getItem() != null) {
+                System.out.println(itemSlot.getItem());
+            }
+        }
     }
 
     private static void testCombat() {

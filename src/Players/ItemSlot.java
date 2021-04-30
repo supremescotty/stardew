@@ -7,4 +7,15 @@ public class ItemSlot {
 
     public Item getItem() { return item; }
     public void setItem(Item item) { this.item = item; }
+
+    public ItemSlot(ItemsOld.Item item) {
+        this.item = item;
+    }
+
+    public boolean isNull() {
+        if (item == null) {
+            return true;
+        }
+        return false;
+    }
 }
