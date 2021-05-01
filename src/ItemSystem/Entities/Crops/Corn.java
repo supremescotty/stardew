@@ -4,6 +4,6 @@ import ItemSystem.Entities.Crop;
 
 public class Corn extends Crop {
     public Corn() {
-        
+        super();
     }
 }
