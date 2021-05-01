@@ -23,6 +23,10 @@ public class Inventory {
         else inventory = new InventorySlot[24];
     }
 
+    /**
+     * Add an Entity object to the inventory
+     * @param e the Entity to add
+     */
     public void addToInventory(Entity e) {
         if (entityInInventory(e)) {
             addToStack(e);
@@ -37,6 +41,11 @@ public class Inventory {
         }
     }
 
+    /**
+     * Check to see if an Entity is in the inventory
+     * @param e the Entity in question
+     * @return true if found; else false;
+     */
     private boolean entityInInventory(Entity e) {
         for (InventorySlot slot : inventory) {
             if (slot != null && slot.getEntity().equals(e)) return true;
@@ -44,6 +53,12 @@ public class Inventory {
         return false;
     }
 
+    /**
+     * If there exists an entity already in the inventory, add to the number of entities
+     * @param e the entity to add,
+     *          use {@link ItemSystem.Entity.getNumberOfEntities()}
+     *          to get the number of entities to add
+     */
     private void addToStack(Entity e) {
         for (InventorySlot slot : inventory) {
             if (slot.getEntity().equals(e)) {

@@ -10,10 +10,39 @@ package ItemSystem;
  * @see ItemSystem.InventorySlot
  */
 public abstract class Entity {
+    // identifiers
     private int id;
     private EntityType entityType;
+
+    // game values
     private int numberOfEntities;
     private boolean stackable;
+    private boolean deletable;
+    private float sellPrice;
+    private float buyPrice;
+    private String name;
+    private String description;
+
+    // ===========================
+
+    /**
+     * Basic setup for an Entity.
+     * @param name
+     * @param description
+     * @param sellPrice
+     * @param buyPrice
+     *
+     * @see ItemSystem.Entities.Tool
+     * @see ItemSystem.Entities.Weapon
+     */
+    public Entity(String name, String description, float sellPrice, float buyPrice, EntityType type) {
+        setName(name);
+        setDescription(description);
+        setSellPrice(sellPrice);
+        setBuyPrice(buyPrice);
+        setEntityType(type);
+    }
+    // ===========================
 
     public int getId() { return id; }
     public void setId(int id) { this.id = id; }
@@ -22,8 +51,25 @@ public abstract class Entity {
     public void setEntityType(EntityType e) { this.entityType = e; }
 
     public int getNumberOfEntities() { return numberOfEntities; }
-    public void setNumberOfEntities(int numberOfEntities) { this.numberOfEntities = numberOfEntities; }
+    public void setNumberOfEntities(int numberOfEntities) {
+        if (isStackable()) this.numberOfEntities = numberOfEntities;
+    }
 
     public boolean isStackable() { return stackable; }
     public void setStackable(boolean stackable) { this.stackable = stackable; }
+
+    public boolean isDeletable() { return deletable; }
+    public void setDeletable(boolean deletable) { this.deletable = deletable; }
+
+    public float getSellPrice() { return sellPrice; }
+    public void setSellPrice(float sellPrice) { this.sellPrice = sellPrice; }
+
+    public float getBuyPrice() { return buyPrice; }
+    public void setBuyPrice(float buyPrice) { this.buyPrice = buyPrice; }
+
+    public String getName() { return name; }
+    public void setName(String name) { this.name = name; }
+
+    public String getDescription() { return description; }
+    public void setDescription(String description) { this.description = description; }
 }

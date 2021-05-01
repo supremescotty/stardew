@@ -1,3 +1,4 @@
+import ItemSystem.InventorySlot;
 import ItemsOld.AnimalProduct;
 import ItemsOld.Item;
 import Menus.*;
@@ -44,9 +45,9 @@ public class Game {
     }
 
     private static void testInventory() {
-        Players.Inventory inventory = new Players.Inventory(new NPC());
+        ItemSystem.Inventory inventory = new ItemSystem.Inventory(new NPC());
         inventory.addToInventory(new AnimalProduct());
-        ItemSlot[] slots = inventory.getInventory();
+        InventorySlot[] slots = inventory.getInventory();
 
         for (ItemSlot itemSlot : slots) {
             if (itemSlot != null && itemSlot.getItem() != null) {
