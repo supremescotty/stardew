@@ -17,7 +17,7 @@ public class NPC extends Player {
         this.setFirstName(firstName);
         this.setLastName(lastName);
 
-        this.setInventory(new Inventory(this));
+        this.setInventory(new ItemSystem.Inventory(this));
     }
 
 }
