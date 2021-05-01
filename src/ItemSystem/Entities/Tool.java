@@ -4,13 +4,20 @@ import ItemSystem.Entity;
 import ItemSystem.EntityType;
 
 public abstract class Tool extends Entity {
-    private int mainMinStat; // used only for WateringCan
     private int mainMaxStat; // e.g., max water level (can), max hits to take down tree (axe), etc.
 
-    public Tool(String name, String description, float sellPrice, float buyPrice) {
-        super(name, description, sellPrice, buyPrice, EntityType.TOOL);
+    public Tool(String name, String description, int mainMaxStat) {
+        this(name, description, 0.0f, 0.0f, mainMaxStat);
+    }
 
-        this.setStackable(false);
+    public Tool(String name, String description, float sellPrice, float buyPrice, int mainMaxStat) {
+        super(name, description, sellPrice, buyPrice, EntityType.TOOL, 1);
+    }
+
+    public void setStandardTool(int mainMaxStat) {
+        setMainMaxStat(mainMaxStat);
+        this.setSellable(false);
+        this.setDeletable(false);
     }
 
     /**

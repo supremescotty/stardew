@@ -5,14 +5,16 @@ import ItemSystem.Entities.Tool;
 public class Scythe extends Tool {
     private final static String SCYTHE_DESCRIPTION = "";
 
-    public Scythe(float sellPrice, float buyPrice, int mainMaxStat) {
-        this(SCYTHE_DESCRIPTION, sellPrice, buyPrice, mainMaxStat);
+    public Scythe() {
+        this("Scythe", SCYTHE_DESCRIPTION, 1);
     }
 
-    public Scythe(String description, float sellPrice, float buyPrice, int mainMaxStat) {
-        super("Scythe", description, sellPrice, buyPrice);
+    public Scythe(String name, String description, int mainMaxStat) {
+        super(name, description, mainMaxStat);
+    }
 
-        this.setMainMaxStat(mainMaxStat);
+    public Scythe(String name, String description, float sellPrice, float buyPrice, int mainMaxStat) {
+        super(name, description, sellPrice, buyPrice, mainMaxStat);
     }
 
     @Override

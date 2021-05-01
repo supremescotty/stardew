@@ -14,11 +14,12 @@ public abstract class Weapon extends Entity {
      * @param sellPrice less than the buyPrice
      * @param buyPrice greater than the sellPrice
      */
-    public Weapon(String name, String description, float sellPrice, float buyPrice) {
-        super(name, description, sellPrice, buyPrice, EntityType.WEAPON);
+    public Weapon(String name, String description, float sellPrice, float buyPrice, int damage, float criticalHitChance) {
+        super(name, description, sellPrice, buyPrice, EntityType.WEAPON, 1);
 
         this.setStackable(false);
         this.setDeletable(false);
+        this.setSellable(false);
     }
 
     public int getDamage() { return damage; }

@@ -19,7 +19,7 @@ public class Inventory {
      * @see Players.Self
      */
     public Inventory(Player player) {
-        if (player.isNPC()) inventory = new InventorySlot[6];
+        if (player.isNPC()) inventory = new InventorySlot[4];
         else inventory = new InventorySlot[24];
     }
 
@@ -28,17 +28,33 @@ public class Inventory {
      * @param e the Entity to add
      */
     public void addToInventory(Entity e) {
-        if (entityInInventory(e)) {
+        if (e.isStackable() && entityInInventory(e)) {
             addToStack(e);
-        } else {
-            for (InventorySlot slot : getInventory()) {
-                if (slot == null) {
-                    // add entity to empty slot and break
-                    slot = new InventorySlot(e);
-                    break;
-                }
+        }
+        else if (inventoryFull()) {
+            return;
+        }
+        else {
+            addNewEntity(e);
+        }
+    }
+
+    private void addNewEntity(Entity e) {
+        for (int i = 0; i < inventory.length; i++) {
+            if (inventory[i] == null) {
+                inventory[i] = new InventorySlot(e);
+                break;
             }
         }
+    }
+
+    private boolean inventoryFull() {
+        for (InventorySlot slot : inventory) {
+            if (slot == null) {
+                return false;
+            }
+        }
+        return true;
     }
 
     /**
@@ -47,8 +63,10 @@ public class Inventory {
      * @return true if found; else false;
      */
     private boolean entityInInventory(Entity e) {
-        for (InventorySlot slot : inventory) {
-            if (slot != null && slot.getEntity().equals(e)) return true;
+        for (int i = 0; i < inventory.length; i++) {
+            if (inventory[i] != null && inventory[i].getEntity().getName() == e.getName()) {
+                return true;
+            }
         }
         return false;
     }
@@ -60,12 +78,14 @@ public class Inventory {
      *          to get the number of entities to add
      */
     private void addToStack(Entity e) {
-        for (InventorySlot slot : inventory) {
-            if (slot.getEntity().equals(e)) {
-                // increase number of entities of the entity inside slot by:
-                // the current number of entities + the number to add (e.getNumberOfEntities())
-                slot.getEntity().setNumberOfEntities(slot.getEntity().getNumberOfEntities() + e.getNumberOfEntities());
+        for (int i = 0; i < inventory.length; i++) {
+            if (inventory[i] != null && inventory[i].getEntity().getName() == e.getName()) {
+                inventory[i].getEntity().setNumberOfEntities(inventory[i].getEntity().getNumberOfEntities() + e.getNumberOfEntities());
             }
         }
+    }
+
+    public void removeEntityFromPosition(int i) {
+        this.inventory[i] = null;
     }
 }

@@ -5,14 +5,16 @@ import ItemSystem.Entities.Tool;
 public class PickAxe extends Tool {
     private final static String PICK_AXE_DESCRIPTION = "";
 
-    public PickAxe(float sellPrice, float buyPrice, int mainMaxStat) {
-        this(PICK_AXE_DESCRIPTION, sellPrice, buyPrice, mainMaxStat);
+    public PickAxe() {
+        this("PickAxe", PICK_AXE_DESCRIPTION, 3);
     }
 
-    public PickAxe(String description, float sellPrice, float buyPrice, int mainMaxStat) {
-        super("Pick Axe", description, sellPrice, buyPrice);
+    public PickAxe(String name, String description, int mainMaxStat) {
+        super(name, description, mainMaxStat);
+    }
 
-        this.setMainMaxStat(mainMaxStat);
+    public PickAxe(String name, String description, float sellPrice, float buyPrice, int mainMaxStat) {
+        super(name, description, sellPrice, buyPrice, mainMaxStat);
     }
 
     @Override

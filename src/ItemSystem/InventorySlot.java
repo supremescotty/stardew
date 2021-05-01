@@ -18,4 +18,9 @@ public class InventorySlot {
     public InventorySlot(Entity e) {
         this.entity = e;
     }
+
+    public boolean isEmpty() {
+        if (entity == null) return true;
+        else return false;
+    }
 }

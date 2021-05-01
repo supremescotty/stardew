@@ -1,9 +1,7 @@
 package Players;
 
 public class NPC extends Player {
-    /**
-     * Create a new NPC
-     */
+
     public NPC() {
         this(true, "", "");
     }

@@ -34,6 +34,7 @@ public class Inventory {
      * @param item
      */
     public void addToInventory(Item item) {
+//        System.out.println();
         if (itemInInventory(item)) {
             addToStack(item, inventory);
         } else {

@@ -7,14 +7,16 @@ public class WateringCan extends Tool {
     private final static String WATERING_CAN_DESCRIPTION = "";
     private int waterLevel;
 
-    public WateringCan(float sellPrice, float buyPrice, int mainMaxStat) {
-        this(WATERING_CAN_DESCRIPTION, sellPrice, buyPrice, mainMaxStat);
+    public WateringCan() {
+        this("WateringCan", WATERING_CAN_DESCRIPTION, 60);
     }
 
-    public WateringCan(String description, float sellPrice, float buyPrice, int mainMaxStat) {
-        super("Watering Can", description, sellPrice, buyPrice);
+    public WateringCan(String name, String description, int mainMaxStat) {
+        super(name, description, mainMaxStat);
+    }
 
-        this.setMainMaxStat(mainMaxStat);
+    public WateringCan(String name, String description, float sellPrice, float buyPrice, int mainMaxStat) {
+        super(name, description, sellPrice, buyPrice, mainMaxStat);
     }
 
     @Override

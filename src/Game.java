@@ -1,6 +1,7 @@
+import ItemSystem.Entities.Tools.Axe;
+import ItemSystem.Entities.Tools.*;
+import ItemSystem.Entities.Weapons.Sword;
 import ItemSystem.InventorySlot;
-import ItemsOld.AnimalProduct;
-import ItemsOld.Item;
 import Menus.*;
 import Players.*;
 
@@ -45,13 +46,25 @@ public class Game {
     }
 
     private static void testInventory() {
-        ItemSystem.Inventory inventory = new ItemSystem.Inventory(new NPC());
-        inventory.addToInventory(new AnimalProduct());
-        InventorySlot[] slots = inventory.getInventory();
+        Self npc = new Self();
 
-        for (ItemSlot itemSlot : slots) {
-            if (itemSlot != null && itemSlot.getItem() != null) {
-                System.out.println(itemSlot.getItem());
+        npc.getInventory().addToInventory(new Axe());
+        npc.getInventory().addToInventory(new Sword());
+        npc.getInventory().addToInventory(new Axe());
+        npc.getInventory().addToInventory(new Scythe());
+        npc.getInventory().addToInventory(new TrashCan());
+        npc.getInventory().addToInventory(new FishingRod());
+        npc.getInventory().addToInventory(new WateringCan());
+
+
+
+//        Self self = new Self("Karl", "Damus");
+//        self.getInventory().addToInventory(new Axe());
+
+        for (InventorySlot slot : npc.getInventory().getInventory()) {
+//            System.out.println("New slot");
+            if (slot != null) {
+                System.out.println(slot.getEntity().getName() + " #: " + slot.getEntity().getNumberOfEntities());
             }
         }
     }
