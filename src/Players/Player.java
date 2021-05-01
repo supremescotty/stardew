@@ -7,7 +7,7 @@ public abstract class Player {
     private String firstName;
     private String lastName;
 
-    private Inventory inventory;
+    private ItemSystem.Inventory inventory;
 
     public boolean isNPC() { return isNPC; }
     public void setNPC(boolean NPC) { isNPC = NPC; }
@@ -19,6 +19,6 @@ public abstract class Player {
 
     public String getName() { return firstName + " " + lastName; }
 
-    public Inventory getInventory() { return inventory; }
-    public void setInventory(Inventory inventory) { this.inventory = inventory; }
+    public ItemSystem.Inventory getInventory() { return inventory; }
+    public void setInventory(ItemSystem.Inventory inventory) { this.inventory = inventory; }
 }

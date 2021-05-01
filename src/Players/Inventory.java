@@ -42,7 +42,6 @@ public class Inventory {
                 if (itemSlot == null) {
                     // add item to empty slot
                     itemSlot = new ItemSlot(item);
-//                    itemSlot.setItem(item);
                     System.out.println("set item");
                     break;
                 }
