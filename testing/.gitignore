@@ -1,9 +1,0 @@
-# Dependency directories
-node_modules/
-
-# Stardew Valley data files
-Crops.*
-ObjectInformation.*
-
-# Parsed crops
-parsed-crop-data.json
