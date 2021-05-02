@@ -1,8 +1,10 @@
 package ItemSystem;
 
+import ItemSystem.Entities.Tools.*;
+import ItemSystem.Entities.Weapons.Sword;
 import Players.Player;
 
-public class Inventory {
+public class Inventory implements Comparable<String> {
     private InventorySlot[] inventory;
 
     public InventorySlot[] getInventory() { return inventory; }
@@ -20,7 +22,25 @@ public class Inventory {
      */
     public Inventory(Player player) {
         if (player.isNPC()) inventory = new InventorySlot[4];
-        else inventory = new InventorySlot[24];
+        else setUpStartingInventory(player);
+    }
+
+    /**
+     * Create the starting inventory and add the starting tools / weapons to the player's inventory
+     * @param player the human-controlled-player
+     */
+    private void setUpStartingInventory(Player player) {
+        inventory = new InventorySlot[24];
+        player.setInventory(this);
+        ItemSystem.Inventory inventory = player.getInventory();
+
+        ItemSystem.Entity[] starterItems = new ItemSystem.Entity[] {
+                new Axe(), new Hoe(), new WateringCan(), new Sword(), new PickAxe(), new Scythe()
+        };
+
+        for (ItemSystem.Entity e : starterItems) {
+            this.addToInventory(e);
+        }
     }
 
     /**
@@ -85,7 +105,41 @@ public class Inventory {
         }
     }
 
+    /**
+     * Remove an entity located at an index i
+     * @param i the index in {{@link #inventory}}
+     *
+     * @see TrashCan
+     */
     public void removeEntityFromPosition(int i) {
         this.inventory[i] = null;
+    }
+
+    public void sort() {
+        boolean swapped = true;
+
+        while (swapped) {
+            swapped = false;
+            // loop through inventory
+            for (int i = 0; i < this.inventory.length - 1; i++) {
+                // not null checks
+                if (this.inventory[i] != null && this.inventory[i].getEntity() != null && this.inventory[i + 1] != null && this.inventory[i + 1].getEntity() != null) {
+                    // compareTo implementation
+                    if (this.inventory[i].getEntity().getName().compareTo(this.inventory[i + 1].getEntity().getName()) > 0) {
+                        // set tmp and do swap
+                        Entity tmp = inventory[i].getEntity();
+                        this.inventory[i].setEntity(inventory[i + 1].getEntity());
+                        this.inventory[i + 1].setEntity(tmp);
+
+                        swapped = true;
+                    }
+                }
+            }
+        }
+    }
+
+    @Override
+    public int compareTo(String o) {
+        return 0;
     }
 }

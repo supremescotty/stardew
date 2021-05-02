@@ -7,6 +7,7 @@ public class InventorySlot {
     private Entity entity; // can be any item
 
     public Entity getEntity() { return this.entity; }
+    public void setEntity(Entity entity) { this.entity = entity; }
 
     /**
      * Create a new InventorySlot object which contains an entity (item)
@@ -23,4 +24,7 @@ public class InventorySlot {
         if (entity == null) return true;
         else return false;
     }
+
+//    public boolean compareTo(InventorySlot inventorySlot) {
+//    }
 }

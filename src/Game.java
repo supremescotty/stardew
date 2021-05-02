@@ -46,23 +46,15 @@ public class Game {
     }
 
     private static void testInventory() {
-        Self npc = new Self();
+        Self self = new Self();
+        printInventory(self);
+        System.out.println();
+        self.getInventory().sort();
+        printInventory(self);
+    }
 
-        npc.getInventory().addToInventory(new Axe());
-        npc.getInventory().addToInventory(new Sword());
-        npc.getInventory().addToInventory(new Axe());
-        npc.getInventory().addToInventory(new Scythe());
-        npc.getInventory().addToInventory(new TrashCan());
-        npc.getInventory().addToInventory(new FishingRod());
-        npc.getInventory().addToInventory(new WateringCan());
-
-
-
-//        Self self = new Self("Karl", "Damus");
-//        self.getInventory().addToInventory(new Axe());
-
-        for (InventorySlot slot : npc.getInventory().getInventory()) {
-//            System.out.println("New slot");
+    private static void printInventory(Player player) {
+        for (InventorySlot slot : player.getInventory().getInventory()) {
             if (slot != null) {
                 System.out.println(slot.getEntity().getName() + " #: " + slot.getEntity().getNumberOfEntities());
             }

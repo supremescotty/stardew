@@ -2,6 +2,8 @@ package Players;
 
 //import Players.Inventory;
 
+import ItemSystem.Inventory;
+
 public abstract class Player {
     private boolean isNPC;
     private String firstName;
