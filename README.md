@@ -19,4 +19,4 @@ Get started by running Game.java in your preferred console / terminal!
 - Increase my knowledge of Object Oriented Programming and hone my fundamental game design skills.
 
 - - - -
-`Note that I do not own any rights to the video-game Stardew Valley. All rights to the game are strictly owned by @ConcernedApe, the creator of Stardew Valley. This rendition is simply a reamake for the soul purpose of my own learning.`
+Note that I do not own any rights to the video-game Stardew Valley. All rights to the game are strictly owned by @ConcernedApe, the creator of Stardew Valley. This rendition is simply a reamake for the soul purpose of my own learning.
