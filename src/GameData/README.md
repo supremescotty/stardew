@@ -8,4 +8,4 @@ Additionally, these assets are merely data files. I have obtained no code from t
 use these assets to illegally obtain the game would be **impossible** unless they were to add every line of code
 themselves.
 
-For more info on the creators of the game please see the folowing [credits.json](https://github.com/karldamus/StardewValley/blob/src/GameData/Strings/credits.json) file
+For more info on the creators of the game please see the folowing [credits.json](https://github.com/karldamus/StardewValley/blob/main/src/GameData/Strings/credits.json) file
