@@ -7,3 +7,5 @@ on [steam](https://store.steampowered.com/app/413150/Stardew_Valley/)), are bein
 Additionally, these assets are merely data files. I have obtained no code from the original game. For one to
 use these assets to illegally obtain the game would be **impossible** unless they were to add every line of code
 themselves.
+
+For more info on the creators of the game please see the folowing [credits.json](https://github.com/karldamus/StardewValley/blob/src/GameData/Strings/credits.json) file
