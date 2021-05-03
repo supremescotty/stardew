@@ -1,4 +1,4 @@
-Please note that all the data inside the designated 'gamedata' folder is **strictly owned** by none 
+Please note that all the data inside this 'gamedata' folder is **strictly owned** by none 
 other than Eric Barone otherwise known as @ConcernedApe. I, Karl Damus, fully acknowledge that I retain 
 no ownership to this data. My purpose in using this data is in no way for any personal financial gain. 
 These assets, obtained through means of unpacking the game Stardew Valley (which I bought for the full price 
