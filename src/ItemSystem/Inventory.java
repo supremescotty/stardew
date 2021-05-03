@@ -115,6 +115,11 @@ public class Inventory implements Comparable<String> {
         this.inventory[i] = null;
     }
 
+    /**
+     * Sort this.inventory lexicographically
+     *
+     * todo: add consideration for type of item as well as name of item (as it is done in stardew valley)
+     */
     public void sort() {
         boolean swapped = true;
 
