@@ -20,3 +20,9 @@ Get started by running Game.java in your preferred console / terminal!
 
 - - - -
 Note that I do not own any rights to the video-game Stardew Valley. All rights to the game are strictly owned by @ConcernedApe, the creator of Stardew Valley. This rendition is simply a reamake for the soul purpose of my own learning.
+
+For more info on the creators of the game (and the game in general) please see the folowing:
+- [Official Website](https://www.stardewvalley.net)
+- [Official Forums](https://forums.stardewvalley.net)
+- [ConcernedApe's Twitter](https://www.twitter.com/ConcernedApe)
+- [Stardew Valley Subreddit](https://www.reddit.com/r/StardewValley)
