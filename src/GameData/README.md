@@ -9,7 +9,6 @@ use these assets to illegally obtain the game would be **impossible** unless the
 themselves.
 
 For more info on the creators of the game (and the game in general) please see the folowing:
-- [credits.json](https://github.com/karldamus/StardewValley/blob/main/src/GameData/Strings/credits.json)
 - [Official Website](https://www.stardewvalley.net)
 - [Official Forums](https://forums.stardewvalley.net)
 - [ConcernedApe's Twitter](https://www.twitter.com/ConcernedApe)
