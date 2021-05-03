@@ -1,13 +1,33 @@
+package Game;
+
 import ItemSystem.Entities.Tools.Axe;
 import ItemSystem.Entities.Tools.*;
 import ItemSystem.Entities.Weapons.Sword;
 import ItemSystem.InventorySlot;
 import Menus.*;
 import Players.*;
+import Seasons.Season;
 
 import java.io.IOException;
 
 public class Game {
+    // game variables
+    Player player;
+//    private int day;
+//    private Season season;
+
+
+    void update() {
+
+    }
+
+    // triggers
+    public static void triggerPassOut() {
+
+    }
+
+    // testing:
+
     private static boolean verb = true;
 
     public static void main(String[] args) throws IOException, InterruptedException {

@@ -1,10 +1,13 @@
 package Players;
 
+import ItemSystem.Entity;
+
 public class Self extends Player {
 
     private int stamina;
     private int health;
-//    private int
+
+    private Entity activeEntity; // the item active in one's inventory
 
     public int getStamina() {
         return stamina;

@@ -1,5 +1,7 @@
 package Seasons;
 
+import ItemSystem.Entity;
+
 /**
  * Spring   0
  * Summer   1
@@ -14,7 +16,7 @@ public class Season {
     private static final int daysInSeason = 28;
     private int seasonID;
     private String name;
-    private ItemsOld.Item[] itemsInSeason;
+    private Entity[] itemsInSeason;
 
     public static int getDaysInSeason() { return daysInSeason; }
 
@@ -24,8 +26,8 @@ public class Season {
     public String getSeasonName() { return name; }
     public void setSeasonName(String name) { this.name = name; }
 
-    public ItemsOld.Item[] getItemsInSeason() { return itemsInSeason; }
-    public void setItemsInSeason(ItemsOld.Item[] itemsInSeason) { this.itemsInSeason = itemsInSeason; }
+    public Entity[] getItemsInSeason() { return itemsInSeason; }
+    public void setItemsInSeason(Entity[] itemsInSeason) { this.itemsInSeason = itemsInSeason; }
 
     public void changeSeason() {
         // if winter, change to spring
