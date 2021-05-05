@@ -6,13 +6,15 @@ import ItemSystem.Entities.Weapons.Sword;
 import ItemSystem.InventorySlot;
 import Menus.*;
 import Players.*;
+import Clock.Clock;
 import Seasons.Season;
 
 import java.io.IOException;
 
 public class Game {
+    private static Clock clock;
     // game variables
-    Player player;
+    private static Player player;
 //    private int day;
 //    private Season season;
 
@@ -21,9 +23,25 @@ public class Game {
 
     }
 
+    public static void loadGame() {
+
+    }
+
+    public static void newGame() {
+        setUpPlayer();
+    }
+
+    private static void setUpPlayer() {
+        // todo request name and other player info
+
+        Self self = new Self();
+        player = self;
+    }
+
     // triggers
     public static void triggerPassOut() {
-
+        player.setLocation(0);
+        clock.resetClock();
     }
 
     // testing:
@@ -43,10 +61,15 @@ public class Game {
                 case "Fishing":     testFishing();      break;
                 case "Travel":      testTravelling();   break;
                 case "NPC":         testNpc();          break;
+                case "Mining":      testMining();       break;
 
                 default: break;
             }
         }
+    }
+
+    private static void testMining() {
+
     }
 
     private static void testNpc() {
