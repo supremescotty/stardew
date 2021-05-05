@@ -10,12 +10,13 @@ public class Clock {
     private int minute;
 
     public Clock() {
-
+        this.resetClock();
     }
 
     public void resetClock() {
         this.hour = 6;
         this.minute = 0;
+        changeDay();
     }
 
     public void increaseTime() {
