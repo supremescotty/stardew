@@ -5,7 +5,7 @@ Text-based Java edition of the popular game 'Stardew Valley' by ConcernedApe
 Get started by running Game.java in your preferred console / terminal!
 
 ### Goals / Todo
-- Design & Develop a consistent UI within the console (possibility to extend to a GUI such as Java swing).
+- Design & Develop a consistent Menus.UI.UILoader within the console (possibility to extend to a GUI such as Java swing).
 - Develop a fully function inventory management system with easy to use commands.
 - Integrate all the fun elements of the original Stardew Valley:
   - farming
