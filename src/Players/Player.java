@@ -3,11 +3,13 @@ package Players;
 //import Players.Inventory;
 
 import ItemSystem.Inventory;
+import Locations.Location;
 
 public abstract class Player {
     private boolean isNPC;
     private String firstName;
     private String lastName;
+    private Location location;
 
     private ItemSystem.Inventory inventory;
 
@@ -23,4 +25,7 @@ public abstract class Player {
 
     public ItemSystem.Inventory getInventory() { return inventory; }
     public void setInventory(ItemSystem.Inventory inventory) { this.inventory = inventory; }
+
+    public Location getLocation() { return this.location; }
+    public abstract void setLocation(int i);
 }

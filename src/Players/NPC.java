@@ -30,4 +30,9 @@ public class NPC extends Player {
 
     public boolean isMarriable() { return marriable; }
     public void setMarriable(boolean marriage) { this.marriable = marriage; }
+
+    @Override
+    public void setLocation(int i) {
+
+    }
 }
