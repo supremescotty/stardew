@@ -9,12 +9,24 @@ import java.util.Scanner;
 public class JsonParser {
 
     public static void main(String[] args) {
+        String[][] objects = new String[930][1];
 //        System.out.println(getNameOfObjectFromId("75"));
         for (int i = 0; i <= 930; i++) {
             try {
-                System.out.println(getNameOfObjectFromId(Integer.toString(i)));
+//                System.out.println(getNameOfObjectFromId(Integer.toString(i)));
+                objects[i] = getObjectDataFromId(Integer.toString(i));
             } catch (Exception e) {
 //                e.printStackTrace();
+            }
+        }
+        for (String[] s : objects) {
+            if (s != null && s[0] != null) {
+                System.out.print("[");
+                for (String t : s) {
+                    if (t != null) System.out.print(t + "/");
+                }
+                System.out.print("],");
+                System.out.println();
             }
         }
     }
@@ -32,10 +44,6 @@ public class JsonParser {
     public static String getNameOfObjectFromId(String id) {
         return getObjectDataFromId(id)[0];
     }
-
-//    public static String getObjectIdFromName(String name) {
-//        String objectDataAsString =
-//    }
 
     /**
      * Get a JSONObject given a file path
@@ -56,6 +64,7 @@ public class JsonParser {
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
+
         return new JSONObject(); // failure
     }
 }
