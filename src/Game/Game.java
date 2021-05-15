@@ -1,5 +1,6 @@
 package Game;
 
+import Game.UI.UILoader;
 import ItemSystem.Entities.Tools.Axe;
 import ItemSystem.Entities.Tools.*;
 import ItemSystem.Entities.Weapons.Sword;
@@ -29,6 +30,7 @@ public class Game {
 
     public static void newGame() {
         setUpPlayer();
+        UILoader.playerSetup(player);
     }
 
     private static void setUpPlayer() {
@@ -85,7 +87,7 @@ public class Game {
     }
 
     private static void testMainMenu() throws IOException, InterruptedException {
-        Menus.Main.displayMainMenu();
+        newGame();
     }
 
     private static void testInventory() {
